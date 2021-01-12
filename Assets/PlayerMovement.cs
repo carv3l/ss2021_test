@@ -10,6 +10,11 @@ public class PlayerMovement : MonoBehaviour
     public float Zmin, Zmax;
     public float speed;
     public float tilt;
+
+    public GameObject shot;
+    public Transform shotSpawn;
+    public float fireRate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButton("Fire1")&&(Time.time>nextFire)){
+            Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
+            nextFire = Time.time + fireRate;
+        }
         
     }
     void FixedUpdate()
