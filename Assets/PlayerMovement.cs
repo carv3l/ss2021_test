@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject shot;
     public Transform shotSpawn;
     public float fireRate;
+    public float nextFire;
 
     // Start is called before the first frame update
     void Start()
