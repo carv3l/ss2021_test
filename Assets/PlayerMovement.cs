@@ -26,8 +26,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Fire1")&&(Time.time>nextFire)){
-            Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
             nextFire = Time.time + fireRate;
+            Instantiate(shot,shotSpawn.position,shotSpawn.rotation);
+            
         }
         
     }
